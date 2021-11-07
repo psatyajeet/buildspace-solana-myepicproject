@@ -15,13 +15,12 @@ pub mod myepicproject {
     pub fn add_gif(ctx: Context<AddGif>, gif_link: String) -> ProgramResult {
         // Get a reference to the account and increment total_gifs.
         let base_account = &mut ctx.accounts.base_account;
-        // let user = &mut ctx.accounts.user;
+        let user = &mut ctx.accounts.user;
 
         // Build the struct.
         let item = ItemStruct {
             gif_link: gif_link.to_string(),
-            user_address: *base_account.to_account_info().key,
-            // user_address: *user.to_account_info().key,
+            user_address: *user.to_account_info().key,
         };
 
         // Add it to the gif_list vector.

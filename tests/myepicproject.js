@@ -34,7 +34,7 @@ const main = async () => {
     {
       accounts: {
         baseAccount: baseAccount.publicKey,
-        // user: provider.wallet.publicKey,
+        user: provider.wallet.publicKey,
       },
     }
   );
